@@ -15,14 +15,26 @@ class LoginForm extends React.Component {
     let tarVal = e.target.value
 
     this.setState({
-      name: e.target.value
+      name: tarVal
     });
+  }
 
+  onFormSubmit = (e) => {
+    //check if both fields have value present
+    if (!e.target.username.value || !e.target.password.value){
+      return;
+    }
+
+    //send back up to index.js
+    this.props.onSubmit({
+      username: e.target.username.value,
+      password: e.target.password.value
+    })
   }
 
   render() {
     return (
-      <form>
+      <form onSubmit={this.onFormSubmit.bind(this)}>
         <div>
           <label>
             Username
