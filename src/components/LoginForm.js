@@ -20,21 +20,20 @@ class LoginForm extends React.Component {
   }
 
   onFormSubmit = (e) => {
+    e.preventDefault()
     //check if both fields have value present
-    if (!e.target.username.value || !e.target.password.value){
+    debugger;
+    if (!this.state.username || !this.state.password){
       return;
     }
 
     //send back up to index.js
-    this.props.onSubmit({
-      username: e.target.username.value,
-      password: e.target.password.value
-    })
+    this.props.onSubmit(this.state.username, this.state.password)
   }
 
   render() {
     return (
-      <form onSubmit={this.onFormSubmit.bind(this)}>
+      <form onSubmit={this.onFormSubmit}>
         <div>
           <label>
             Username
