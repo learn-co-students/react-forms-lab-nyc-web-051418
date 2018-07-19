@@ -44,6 +44,7 @@ describe("<LoginForm />", () => {
   describe("Calling `onSubmit` callback prop", () => {
     it("should call the prevent the default action when the form is being submitted", () => {
       const wrapper = shallow(<LoginForm />);
+      debugger; 
       wrapper.find("form").simulate("submit", { preventDefault: spy });
       expect(
         spy.calledOnce,
