@@ -1,9 +1,9 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-import LoginForm from "./components/LoginForm";
-import TwitterMessage from "./components/TwitterMessage";
-import PoemWriter from "./components/PoemWriter";
+import LoginForm from './components/LoginForm';
+import TwitterMessage from './components/TwitterMessage';
+import PoemWriter from './components/PoemWriter';
 
 const login = ({ username, password }) => {
   console.log(`Logging in ${username} with password ${password}`);
@@ -26,5 +26,5 @@ ReactDOM.render(
     </h1>
     <PoemWriter />
   </div>,
-  document.getElementById("root")
+  document.getElementById('root')
 );
